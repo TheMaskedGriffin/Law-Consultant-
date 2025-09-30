@@ -1,4 +1,4 @@
-# import sqlite_fix
+import sqlite_fix
 import os
 import logging
 import streamlit as st
@@ -127,6 +127,7 @@ if api_key:
 else:
 
     st.sidebar.warning("Please enter your OpenAI API key in the sidebar.")
+
 
 
 
