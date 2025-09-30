@@ -7,24 +7,13 @@ from numpy.linalg import norm
 from langchain_openai import OpenAIEmbeddings
 import streamlit as st
 
-# r = redis.Redis(
-#     host=st.secrets["REDIS_HOST"],
-#     port=10715,
-#     decode_responses=True,
-#     username="default",
-#     password=st.secrets["REDIS_PASSWORD"],
-# )
-
-
 r = redis.Redis(
-    host='redis-11772.c15.us-east-1-4.ec2.redns.redis-cloud.com',
-    port=11772,
+    host=st.secrets["REDIS_HOST"],
+    port=10715,
     decode_responses=True,
     username="default",
-    password="zvJOvJ3bRMnXnSZav40HKW0Qzvl2KZvz",
+    password=st.secrets["REDIS_PASSWORD"],
 )
-
-
 
 def get_embeddings_model():
     global embeddings_model
@@ -77,5 +66,6 @@ def cache_query_answer(user_query, answer, ttl_seconds=300):
         print("Successfully cached user query. TTL: 300 seconds")
     except Exception as e:
         print("Error while caching user query:", e)
+
 
 
