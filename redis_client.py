@@ -9,7 +9,7 @@ import streamlit as st
 
 r = redis.Redis(
     host=st.secrets["REDIS_HOST"],
-    port=10715,
+    port=11772,
     decode_responses=True,
     username="default",
     password=st.secrets["REDIS_PASSWORD"],
@@ -66,6 +66,7 @@ def cache_query_answer(user_query, answer, ttl_seconds=300):
         print("Successfully cached user query. TTL: 300 seconds")
     except Exception as e:
         print("Error while caching user query:", e)
+
 
 
 
