@@ -16,7 +16,7 @@ from build_db import create_vector_db
 logging.getLogger("httpx").setLevel(logging.WARNING)
 logging.getLogger("httpx._client").setLevel(logging.WARNING)
 
-st.title("NyayaGPT: Bharatiya Nyaya Sanhita Legal Assistant")
+st.title("Law Consultant: Bharatiya Nyaya Sanhita Legal Assistant")
 api_key = st.sidebar.text_input("Enter your OpenAI API key:", key="openai_api_key", type="password")
 model = st.sidebar.selectbox("Select Model:", ("gpt-4o", "gpt-4o-mini", "gpt-5", "gpt-5-mini"), index=0)
 user_query = st.text_input("Enter your query:", placeholder="Enter your query here...")
@@ -127,6 +127,7 @@ if api_key:
 else:
 
     st.sidebar.warning("Please enter your OpenAI API key in the sidebar.")
+
 
 
 
