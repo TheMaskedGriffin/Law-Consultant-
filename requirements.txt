@@ -7,3 +7,4 @@ redis
 flashrank
 streamlit
 langchain-community
+pysqlite3-binary
